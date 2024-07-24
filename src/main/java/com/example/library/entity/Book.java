@@ -28,4 +28,21 @@ public class Book {
 
 private Set<Author> authors=new HashSet<Author>();
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "book_category",
+            inverseJoinColumns = {@JoinColumn(name="category_id")},
+            joinColumns ={@JoinColumn(name="book_id")} )
+
+
+    private Set<Category> categories=new HashSet<Category>();
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "book_publisher",
+            inverseJoinColumns = {@JoinColumn(name="publisher_id")},
+            joinColumns ={@JoinColumn(name="book_id")} )
+
+
+    private Set<Publisher> publishers=new HashSet<Publisher>();
+
+
 }
