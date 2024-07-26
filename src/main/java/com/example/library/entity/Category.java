@@ -11,8 +11,11 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "authors")
+@Table(name = "categories")
 public class Category {
+        public Category(String name) {
+                this.name = name;
+        }
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)

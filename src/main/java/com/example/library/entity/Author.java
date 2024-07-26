@@ -13,7 +13,13 @@ import java.util.Set;
 @Entity
 @Table(name = "authors")
 public class Author {
-@Id
+    public Author( String name, String description) {
+
+        this.name = name;
+        this.description = description;
+    }
+
+    @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
 
